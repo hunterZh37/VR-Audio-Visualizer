@@ -3,18 +3,21 @@ using UnityEngine;
 public class AudioSourceLoudnessTester : MonoBehaviour
 {
 	public AudioSource audioSource;
-	public float updateStep = 0.1f;
+	public float updateStep;
 	public int sampleDataLength = 1024;
 
-	private float currentUpdateTime = 0f;
+	private float currentUpdateTime;
 
 	public float clipLoudness;
 	private float[] clipSampleData;
 
 	public GameObject cube;
-	public float sizeFactor = 1;
+	public GameObject cube1;
+	public GameObject cube2;
+	public GameObject cube3;
+	public float sizeFactor;
 
-	public float minSize = 0;
+	public float minSize;
 	public float maxSize = 500;
 
 	// Use this for initialization
@@ -41,6 +44,9 @@ public class AudioSourceLoudnessTester : MonoBehaviour
 			clipLoudness *= sizeFactor;
 			clipLoudness = Mathf.Clamp(clipLoudness, minSize, maxSize);
 			cube.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
+			cube1.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
+			cube2.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
+			cube3.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
 		}
 	}
 }

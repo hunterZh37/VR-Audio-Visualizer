@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StationMotion : MonoBehaviour
 {
-    public float speed = 0.3f;
+    public float speed;
     
     void Update()
     {
